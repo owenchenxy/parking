@@ -3,8 +3,6 @@
 import subprocess
 import sys
 sys.path.append('..')
-print(sys.path)
-
 from tools import *
 
 #workers = ["edge0", "edge1", "edge2"]
