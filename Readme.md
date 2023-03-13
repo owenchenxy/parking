@@ -9,7 +9,7 @@
 **Given**: 三辆车都在第1个和第2个停车场中间，三个停车场都还有2个位置
 **When**: 执行调度
 **Then**: 距离第2个停车场最近的car3/car2被调度到第2个停车场，car1被调度到第3个停车场
-![Alt Text](../images/case1.png)
+![Alt Text](./images/case1.png)
 运行以下代码测试：
 ```
 ./clean.sh
@@ -23,7 +23,7 @@ kubectl get pod -o wide
 **Given**: car1/car2在第1个和第2个停车场中间，car3在第2和第3个停车场中间，第2个停车场还有1个空位， 第3个停车场还有2个空位
 **When**: 执行调度
 **Then**: car3/car1被调度到第3个停车场， car2被调度到第2个停车场
-![Alt Text](../images/case2.png)
+![Alt Text](./images/case2.png)
 运行以下代码测试：
 ```
 ./clean.sh
@@ -37,7 +37,7 @@ kubectl get pod -o wide
 **Given**: car1/car2在第1个和第2个停车场中间，car3在第2和第3个停车场中间，第2个停车场还有1个空位， 第3个停车场还有1个空位
 **When**: 执行调度
 **Then**: car3被调度到第3个停车场， car2被调度到第2个停车场, car1无法调度
-![Alt Text](../images/case3.png)
+![Alt Text](./images/case3.png)
 运行以下代码测试：
 ```
 ./clean.sh
