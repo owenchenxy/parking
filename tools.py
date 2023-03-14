@@ -6,6 +6,9 @@ import json
 def set_node_space(node_name, space):
     subprocess.run(f"kubectl label node {node_name} space={space} --overwrite", shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
+def set_node_position(node_name, position):
+    subprocess.run(f"kubectl label node {node_name} position={position} --overwrite", shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
 def get_all_vehicles():
     # Get all pods with "app" label
     output = subprocess.check_output('kubectl get pods -l app -o json', shell=True).decode()
@@ -56,7 +59,6 @@ def migrate_pod_to_node(pod_name: str, node: str):
 
     space_of_new_node = get_node_space(node) - 1
     set_node_space(node, space_of_new_node)
-
 
 def get_node_position(node_name):
     try:

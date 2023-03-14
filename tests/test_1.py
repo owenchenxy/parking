@@ -16,6 +16,10 @@ for pod_yaml in ["pod1-1.yaml", "pod1-2.yaml", "pod1-3.yaml"]:
 subprocess.run("kubectl apply -f pod_dummy.yaml", shell=True, check=True)
 
 # 初始化环境，将三个pod都先迁到第一个worker上去
+set_node_position(workers[0], 25)
+set_node_position(workers[1], 25)
+set_node_position(workers[2], 25)
+
 set_node_space(workers[0], 10)
 set_node_space(workers[1], 10)
 set_node_space(workers[2], 10)
